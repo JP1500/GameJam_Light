@@ -3,19 +3,28 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] Slider slider;
-    [SerializeField] PlayerController playerController;
+    [Header("Timer")]
+    [SerializeField] float currentTime;
 
-    [SerializeField] float timer;
+
+    [Header("Outros componentes/objetos")]
+    [SerializeField] Slider slider;
+    [SerializeField] public PlayerController playerController;
 
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
+        playerController = FindObjectOfType<PlayerController>();
         slider.maxValue = playerController.lifeTime;
+        currentTime = playerController.lifeTime;
     }
     void Update()
     {
-        slider.value = timer;
+        if (currentTime >= 0)
+        {
+            currentTime -= Time.deltaTime;
 
+            slider.value = currentTime;
+        }
     }
 }

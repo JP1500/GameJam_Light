@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if (canMove)
+        //if (canMove)
         {
             if (canMoveLeft && !canMoveRight && !canMoveUp && !canMoveDown)
             {
