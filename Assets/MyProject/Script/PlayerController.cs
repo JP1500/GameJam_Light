@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,12 +14,24 @@ public class PlayerController : MonoBehaviour
     bool canMoveUp;
     bool canMoveDown;
 
+    public static PlayerController instance;
+
     [Header("Componentes externos")]
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D rb;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         canMoveLeft = false;
         canMoveRight = false;
 

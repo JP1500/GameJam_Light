@@ -7,9 +7,11 @@ public class Pontos : MonoBehaviour
     [SerializeField] TextMeshProUGUI pontos;
     public int score;
     public static Pontos instance;
+    [SerializeField] GameManager gameManager;
 
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         instance = this;
         UpdateScore();
     }
