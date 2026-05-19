@@ -11,7 +11,7 @@ public class Pontos : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
         instance = this;
         UpdateScore();
     }
