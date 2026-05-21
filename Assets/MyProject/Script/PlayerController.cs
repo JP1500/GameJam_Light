@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] public float lifeTime;
 
-    bool canMove;
+    public bool canMove;
     bool canMoveLeft;
     bool canMoveRight;
     bool canMoveUp;
@@ -17,20 +17,27 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     [Header("Componentes externos")]
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] public SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameManager gameManager;
 
     private void Awake()
     {
+        canMove = true;
         canMoveLeft = false;
         canMoveRight = false;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        gameManager = GetComponent<GameManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
+        gameManager.speedBonus += speed;
+        gameManager.timerBonus += lifeTime;
     }
     void Start()
     {
-
+        //gameManager.speedBonus += speed;
+        //gameManager.timerBonus += lifeTime;
     }
 
 
@@ -46,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        //if (canMove)
+        if (canMove)
         {
             if (canMoveLeft && !canMoveRight && !canMoveUp && !canMoveDown)
             {

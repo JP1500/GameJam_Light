@@ -22,6 +22,10 @@ public class Timer : MonoBehaviour
     {
         playerController = GetComponent<PlayerController>();
         playerController = FindAnyObjectByType<PlayerController>();
+    }
+
+    private void Start()
+    {
         slider.maxValue = playerController.lifeTime;
         currentTime = playerController.lifeTime;
     }
@@ -36,8 +40,10 @@ public class Timer : MonoBehaviour
 
         else if (currentTime <= 0)
         {
+            playerController.canMove = false;
+            playerController.spriteRenderer.color = Color.blue;
             Debug.Log("Carregando cena");
-            LoadScene();
+            Invoke("LoadScene", 1.5f);
         }
     }
 

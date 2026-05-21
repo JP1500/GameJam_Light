@@ -8,6 +8,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Pontos pontos;
 
     [SerializeField] GameManager instance;
+
+    [Header("Atributos upgradeados pro player")]
+    [SerializeField] public float timerBonus;
+    [SerializeField] public int pointBonus;
+    [SerializeField] public float speedBonus;
+
     private void Awake()
     {
         instance = this;

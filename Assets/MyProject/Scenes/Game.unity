@@ -1695,6 +1695,10 @@ PrefabInstance:
       propertyPath: pontos
       value: 
       objectReference: {fileID: 336641521}
+    - target: {fileID: 4657715906854055492, guid: eec537914ff54c040834a3ba8216b953, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 5192479710488491150}
     - target: {fileID: 6888760181938517694, guid: eec537914ff54c040834a3ba8216b953, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1813,6 +1817,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db5fc2e7c7531d448a73074d0b496854, type: 3}
+--- !u!114 &5192479710488491150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7150935248822546100, guid: db5fc2e7c7531d448a73074d0b496854, type: 3}
+  m_PrefabInstance: {fileID: 5192479710488491149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d1ad7a07874b64c82003f42584adec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1001 &8235355193954168153
 PrefabInstance:
   m_ObjectHideFlags: 0
