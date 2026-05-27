@@ -31,13 +31,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gameManager = GetComponent<GameManager>();
         gameManager = FindAnyObjectByType<GameManager>();
-        gameManager.speedBonus += speed;
-        gameManager.timerBonus += lifeTime;
+        speed += gameManager.speedBonus;
+        lifeTime += gameManager.timerBonus;
     }
     void Start()
     {
-        //gameManager.speedBonus += speed;
-        //gameManager.timerBonus += lifeTime;
+
     }
 
 

@@ -367,6 +367,7 @@ MonoBehaviour:
   timerBonus: 10
   pointBonus: 0
   speedBonus: 0
+  multiplierValue: 0
   gameManager: {fileID: 1873701425}
 --- !u!114 &564881933
 MonoBehaviour:
@@ -553,8 +554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrades
   value: 10
   timerBonus: 0
-  pointBonus: 0
+  pointBonus: 1
   speedBonus: 10
+  multiplierValue: 0.3
   gameManager: {fileID: 1873701425}
 --- !u!1 &929600630
 GameObject:
@@ -1049,7 +1051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7150935248822546100, guid: db5fc2e7c7531d448a73074d0b496854, type: 3}
       propertyPath: totalPoints
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

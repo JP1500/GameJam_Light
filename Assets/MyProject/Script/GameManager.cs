@@ -4,10 +4,11 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Pontos")]
     [SerializeField] public int totalPoints;
-    [SerializeField] Pontos pontos;
+    [SerializeField] public int points;
 
-    [SerializeField] GameManager instance;
+    public static GameManager instance;
 
     [Header("Atributos upgradeados pro player")]
     [SerializeField] public float timerBonus;
@@ -16,26 +17,26 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-
-        if (instance != null)
+        if (instance == null)
         {
+            instance = this;
+
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Debug.Log("Fui apagado");
             Destroy(gameObject);
         }
 
-        pontos = FindAnyObjectByType<Pontos>();
-
-        pontos.score = 0;
-        totalPoints += pontos.score;
+        
     }
 
     private void Update()
     {
-        totalPoints = pontos.score;
+        if (points != 0)
+        {
+            totalPoints += points;
+            points = 0;
+        }
     }
 }

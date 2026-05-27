@@ -11,11 +11,6 @@ public class HudScore : MonoBehaviour
     {
         gameManager = FindAnyObjectByType<GameManager>();
     }
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         textScore.text = gameManager.totalPoints.ToString("00");

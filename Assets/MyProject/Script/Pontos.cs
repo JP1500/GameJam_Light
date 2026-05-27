@@ -14,10 +14,12 @@ public class Pontos : MonoBehaviour
         gameManager = FindAnyObjectByType<GameManager>();
         instance = this;
         UpdateScore();
+        score = 0;
     }
     public void AddScore()
     {
-        score++;
+        score += 1 + gameManager.pointBonus;
+        gameManager.points += 1 + gameManager.pointBonus;
 
         Debug.Log("Pontos: " + score);
 

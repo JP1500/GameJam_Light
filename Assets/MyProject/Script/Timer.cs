@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+
+    public static Timer Instance;
     [Header("Timer")]
     [SerializeField] float currentTime;
 
@@ -20,8 +22,8 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
         playerController = FindAnyObjectByType<PlayerController>();
+        Instance = this;
     }
 
     private void Start()
