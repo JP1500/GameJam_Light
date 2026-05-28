@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/MyProject/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/MyProject/Scenes/Hud.unity
     guid: 7f463ab53cab4ad4bb8e66e09aa19462
-=======
-    path: Assets/MyProject/Scenes/Menu inicial.unity
-    guid: 2f92384e60e3ecc4ea8a533ca4325bc4
->>>>>>> 6c885bcd529a746a29fa8dec7065facb4053e435
-  m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_configObjects: {}
