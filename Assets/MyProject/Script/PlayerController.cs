@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
     bool canMoveRight;
     bool canMoveUp;
     bool canMoveDown;
+
+    public Animator anim;
 
     public static PlayerController instance;
 
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gameManager = GetComponent<GameManager>();
         gameManager = FindAnyObjectByType<GameManager>();
+        anim = GetComponent<Animator>();
         speed += gameManager.speedBonus;
         lifeTime += gameManager.timerBonus;
     }
@@ -42,6 +46,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (canMove) 
+        {
+            anim.SetBool("movendo", true);
+        }
+        else if (!canMove)
+        {
+            anim.SetBool("movendo", false);
+        }
 
     }
 
@@ -82,34 +94,50 @@ public class PlayerController : MonoBehaviour
     public void MoveLeft()
     {
         canMoveLeft = true;
+        anim.SetBool("Lado", true);
+        anim.SetBool("Atras", false);
     }
     public void StopMoveLeft()
     {
         canMoveLeft = false;
+        anim.SetBool("Lado", true);
+        anim.SetBool("Atras", false);
     }
     public void MoveRight()
     {
         canMoveRight = true;
+        anim.SetBool("Lado", true);
+        anim.SetBool("Atras", false);
     }
     public void StopMoveRight()
     {
         canMoveRight = false;
+        anim.SetBool("Lado", true);
+        anim.SetBool("Atras", false);
     }
     public void MoveUp()
     {
         canMoveUp = true;
+        anim.SetBool("Lado", false);
+        anim.SetBool("Atras", true);
     }
     public void StopMoveUp()
     {
         canMoveUp = false;
+        anim.SetBool("Lado", false);
+        anim.SetBool("Atras", true);
     }
     public void MoveDown()
     {
         canMoveDown = true;
+        anim.SetBool("Lado", false);
+        anim.SetBool("Atras", false);
     }
     public void StopMoveDown()
     {
         canMoveDown = false;
+        anim.SetBool("Lado", false);
+        anim.SetBool("Atras", false);
     }
 }
 
