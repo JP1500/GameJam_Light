@@ -869,6 +869,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &1020704709 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3467425662129473051, guid: 155cbd6057b7e7341bff32528eb0d54c, type: 3}
+  m_PrefabInstance: {fileID: 239071428906904597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138197945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1590,7 @@ PrefabInstance:
     - target: {fileID: 3467425662129473051, guid: 155cbd6057b7e7341bff32528eb0d54c, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 303a591640cf4a44fbcccf8db236cf1d, type: 2}
     - target: {fileID: 5335189822049191787, guid: 155cbd6057b7e7341bff32528eb0d54c, type: 3}
       propertyPath: pontos
       value: 
@@ -1598,6 +1603,10 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 1020704706}
+    - target: {fileID: 7339820078553495559, guid: 155cbd6057b7e7341bff32528eb0d54c, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1020704709}
     - target: {fileID: 7339820078553495559, guid: 155cbd6057b7e7341bff32528eb0d54c, type: 3}
       propertyPath: speed
       value: 10

@@ -46,15 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (canMove) 
-        {
-            anim.SetBool("movendo", true);
-        }
-        else if (!canMove)
-        {
-            anim.SetBool("movendo", false);
-        }
-
+  
     }
 
     void FixedUpdate()
@@ -94,50 +86,69 @@ public class PlayerController : MonoBehaviour
     public void MoveLeft()
     {
         canMoveLeft = true;
-        anim.SetBool("Lado", true);
-        anim.SetBool("Atras", false);
+        ResetLayers();
+        anim.SetLayerWeight(1, 2);
+        anim.SetBool("movendo", true);
+        spriteRenderer.flipX = true;
     }
     public void StopMoveLeft()
     {
         canMoveLeft = false;
-        anim.SetBool("Lado", true);
-        anim.SetBool("Atras", false);
+        ResetLayers();
+        anim.SetLayerWeight(1, 2);
+        anim.SetBool("movendo", false);
+        
     }
     public void MoveRight()
     {
         canMoveRight = true;
-        anim.SetBool("Lado", true);
-        anim.SetBool("Atras", false);
+        ResetLayers();
+        anim.SetLayerWeight(1, 2);
+        anim.SetBool("movendo", true);
+        spriteRenderer.flipX = false;
     }
     public void StopMoveRight()
     {
         canMoveRight = false;
-        anim.SetBool("Lado", true);
-        anim.SetBool("Atras", false);
+        ResetLayers();
+        anim.SetLayerWeight(1, 2);
+        anim.SetBool("movendo", false);
     }
     public void MoveUp()
     {
         canMoveUp = true;
-        anim.SetBool("Lado", false);
-        anim.SetBool("Atras", true);
+        ResetLayers();
+        anim.SetLayerWeight(2, 1);
+        anim.SetBool("movendo", true);
     }
     public void StopMoveUp()
     {
         canMoveUp = false;
-        anim.SetBool("Lado", false);
-        anim.SetBool("Atras", true);
+        ResetLayers();
+        anim.SetLayerWeight(2, 1);
+        anim.SetBool("movendo", false);
     }
     public void MoveDown()
     {
         canMoveDown = true;
-        anim.SetBool("Lado", false);
-        anim.SetBool("Atras", false);
+        ResetLayers();
+        anim.SetLayerWeight(0, 0);
+        anim.SetBool("movendo", true);
     }
     public void StopMoveDown()
     {
         canMoveDown = false;
-        anim.SetBool("Lado", false);
-        anim.SetBool("Atras", false);
+        ResetLayers();
+        anim.SetLayerWeight(0, 0);
+        anim.SetBool("movendo", false);
+    }
+
+    private void ResetLayers()
+    {
+        anim.SetLayerWeight(0, 0);
+        anim.SetLayerWeight(1, 0);
+        anim.SetLayerWeight(2, 0);
+    
     }
 }
 
